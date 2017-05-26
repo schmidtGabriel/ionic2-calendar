@@ -1,0 +1,64 @@
+component-calendar {
+  .entry-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: $primary-color;
+    padding-bottom: 5px;
+  }
+  .item-ios.item-block {
+    .item-inner {
+      border: none;
+    }
+  }
+  .item-md.item-block {
+    .item-inner {
+      border: none;
+    }
+  }
+  [calendar] {
+    background-color: $primary-color-light;
+    border-radius: 5px;
+  }
+   .week-title {
+    text-align: center;
+    background-color: #afafaf;
+    color: $primary-color;
+    font-size: 14px;
+    font-weight: 700;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 0px 1px;
+  }
+  .calendar-day {
+    margin: 3px 1px !important;
+    width: 100%;
+    background-color: $primary-color;
+  }
+  .calendar-header {
+    color: #FFF;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: $primary-color;
+    border-radius: 5px;
+    padding: 5px 5px;
+    margin-bottom: 3px;
+    width: 100%;
+    button {
+      &[left-arrow] {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      &[right-arrow] {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+  }
+ 
+  .date-title {
+    color: #FFF;
+    font-weight: 700
+  }
+ 
+}

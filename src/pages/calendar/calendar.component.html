@@ -1,0 +1,123 @@
+
+
+        <div menu-medium margin-top calendar> 
+            <div fxLayout="row" class="calendar-header" >
+        <button (click)="LeftPress(month, year)" left-arrow ><ion-icon ios="ios-arrow-dropleft" md="md-arrow-dropleft" item-left></ion-icon> </button>
+             <div fxLayoutAlign="center center" class="calendar-header" *ngIf="month === 1">Janeiro/{{year}}</div>
+            <div fxLayoutAlign="center center" class="calendar-header" *ngIf="month === 2">Fevereiro/{{year}}</div>
+            <div fxLayoutAlign="center center" class="calendar-header" *ngIf="month === 3">Março/{{year}}</div>
+            <div fxLayoutAlign="center center" class="calendar-header" *ngIf="month === 4">Abril/{{year}}</div>           
+            <div fxLayoutAlign="center center" class="calendar-header" *ngIf="month === 5">Maio/{{year}}</div>
+            <div fxLayoutAlign="center center" class="calendar-header" *ngIf="month === 6">Junho/{{year}}</div>
+            <div fxLayoutAlign="center center" class="calendar-header" *ngIf="month === 7">Julho/{{year}}</div>
+            <div fxLayoutAlign="center center" class="calendar-header" *ngIf="month === 8">Agosto/{{year}}</div>
+            <div fxLayoutAlign="center center" class="calendar-header" *ngIf="month === 9">Setembro/{{year}}</div>
+            <div fxLayoutAlign="center center" class="calendar-header" *ngIf="month === 10">Outubro/{{year}}</div>
+            <div fxLayoutAlign="center center" class="calendar-header" *ngIf="month === 11">Novembro/{{year}}</div>
+            <div fxLayoutAlign="center center" class="calendar-header" *ngIf="month === 12">Dezembro/{{year}}</div>   
+        <button (click)="RightPress(month, year)" right-arrow><ion-icon ios="ios-arrow-dropright" md="md-arrow-dropright" item-right></ion-icon> </button>
+   
+             </div>
+
+    
+
+            <div fxLayout="row" >
+                <div   fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 14%" *ngFor="let day of week"> 
+                        <div class="week-title" fxLayoutAlign="center center"  >{{day}}</div>
+                    
+                </div>
+            </div>
+
+       
+
+            <!-- PRIMEIRO DIA COMEÇA NA SEGUNDA -->
+            <div fxLayout="row"  fxLayoutWrap *ngIf="this.first_day === 1">
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 14%" *ngFor="let entry of date">
+                    <button ion-button class="calendar-day" (click)="DayChoose(entry)" *ngIf="entry.enable == true">
+                        <div class="date-title" >{{entry.month_day}}</div>
+                </button>
+                  <button ion-button class="calendar-day" (click)="DayChoose(entry)" *ngIf="entry.enable == false" disabled>
+                        <div class="date-title" >{{entry.month_day}}</div>
+                </button>
+                </div>
+            </div>
+
+            <!-- PRIMEIRO DIA COMEÇA NA TERÇA -->
+            <div fxLayout="row"  fxLayoutWrap *ngIf="this.first_day === 2">
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 14%" > </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 14%" *ngFor="let entry of date">
+                      <button ion-button class="calendar-day" (click)="DayChoose(entry)" *ngIf="entry.enable == true">
+                        <div class="date-title" >{{entry.month_day}}</div>
+                </button>
+                  <button ion-button class="calendar-day" (click)="DayChoose(entry)" *ngIf="entry.enable == false" disabled>
+                        <div class="date-title" >{{entry.month_day}}</div>
+                </button>
+                </div>
+            </div>
+            <!-- PRIMEIRO DIA COMEÇA NA QUARTA -->
+            <div fxLayout="row" fxLayoutWrap *ngIf="this.first_day === 3">
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 28%" > </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 14%" *ngFor="let entry of date">
+                     <button ion-button class="calendar-day" (click)="DayChoose(entry)" *ngIf="entry.enable == true">
+                        <div class="date-title" >{{entry.month_day}}</div>
+                </button>
+                  <button ion-button class="calendar-day" (click)="DayChoose(entry)" *ngIf="entry.enable == false" disabled>
+                        <div class="date-title" >{{entry.month_day}}</div>
+                </button>
+                </div>
+            </div>
+             <!-- PRIMEIRO DIA COMEÇA NA QUINTA -->
+            <div fxLayout="row"  fxLayoutWrap *ngIf="this.first_day === 4">
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 42%" > </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 14%" *ngFor="let entry of date">
+                    <button ion-button class="calendar-day" (click)="DayChoose(entry)" *ngIf="entry.enable == true">
+                        <div class="date-title" >{{entry.month_day}}</div>
+                </button>
+                  <button ion-button class="calendar-day" (click)="DayChoose(entry)" *ngIf="entry.enable == false" disabled>
+                        <div class="date-title" >{{entry.month_day}}</div>
+                </button>
+                </div>
+            </div>
+              <!-- PRIMEIRO DIA COMEÇA NA SEXTA -->
+            <div fxLayout="row"  fxLayoutWrap *ngIf="this.first_day === 5">
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 56%" > </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 14%" *ngFor="let entry of date">
+                     <button ion-button class="calendar-day" (click)="DayChoose(entry)" *ngIf="entry.enable == true">
+                        <div class="date-title" >{{entry.month_day}}</div>
+                </button>
+                  <button ion-button class="calendar-day" (click)="DayChoose(entry)" *ngIf="entry.enable == false" disabled>
+                        <div class="date-title" >{{entry.month_day}}</div>
+                </button>
+                </div>
+            </div>
+              <!-- PRIMEIRO DIA COMEÇA NA SABADO -->
+            <div fxLayout="row"  fxLayoutWrap *ngIf="this.first_day === 6">
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 70%" > </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 14%" *ngFor="let entry of date">
+                    <button ion-button class="calendar-day" (click)="DayChoose(entry)" *ngIf="entry.enable == true">
+                        <div class="date-title" >{{entry.month_day}}</div>
+                </button>
+                  <button ion-button class="calendar-day" (click)="DayChoose(entry)" *ngIf="entry.enable == false" disabled>
+                        <div class="date-title" >{{entry.month_day}}</div>
+                </button>
+                </div>
+            </div>
+
+              <!-- PRIMEIRO DIA COMEÇA NA DOMINGO -->
+            <div fxLayout="row"  fxLayoutWrap *ngIf="this.first_day === 0">
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 84%" > </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="0 0 14%" *ngFor="let entry of date">
+                     <button ion-button class="calendar-day" (click)="DayChoose(entry)" *ngIf="entry.enable == true">
+                        <div class="date-title" >{{entry.month_day}}</div>
+                </button>
+                  <button ion-button class="calendar-day" (click)="DayChoose(entry)" *ngIf="entry.enable == false" disabled>
+                        <div class="date-title" >{{entry.month_day}}</div>
+                </button>
+                </div>
+            </div>
+
+            <div class="entry-title" fxLayoutAlign="center center" padding *ngIf="choosedDate"  >
+            Choosed Date: {{choosedDate}}
+            </div>
+        </div>
+
